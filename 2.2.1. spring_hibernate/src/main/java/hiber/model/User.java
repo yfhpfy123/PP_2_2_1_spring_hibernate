@@ -22,7 +22,6 @@ public class User {
 
    @OneToOne
    @JoinColumn (name = "car_id")
-//   @JoinColumn (name = "car_id", nullable = true)
    private Car car;
 
    public User() {}
