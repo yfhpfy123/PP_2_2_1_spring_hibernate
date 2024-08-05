@@ -4,16 +4,18 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
+@Table(name = "cars")
 public class Car {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private long id;
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @Column
     private String model;
-
     @Column
     private int series;
+
+    @OneToOne(mappedBy = "car", cascade = CascadeType.ALL)
+    private User user;
 
     public Car () {}
 
